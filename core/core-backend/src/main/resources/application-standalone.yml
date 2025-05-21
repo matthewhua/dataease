@@ -11,7 +11,9 @@ spring:
     validate-on-migrate: false
     locations: classpath:db/migration
     baseline-on-migrate: true
-    out-of-order: true
+    out-of-order: false
+    create-schemas: true
+    schemas: dataease
 
 mybatis-plus:
   mapper-locations: classpath:mybatis/*.xml

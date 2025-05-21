@@ -34,7 +34,7 @@ mybatis:
     map-underscore-to-camel-case: true
 logging:
   file:
-    path: /opt/dataease2.0/logs/dataease
+    path: ~/DEV/dataease2.0/logs/core
 # sql日志生产环境注释掉
 #mybatis-plus:
 #  configuration:
@@ -53,7 +53,9 @@ dataease:
     domain: http://127.0.0.1:9180
     key: edd1c9f034335f136f87ad84b625c8f1
 
-# springdoc-openapi项目配置
+
+  path:
+    ehcache: ~/DEV/dataease2.0/cache
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -67,3 +69,4 @@ knife4j:
   setting:
     language: zh_cn
     enable-swagger-models: false
+

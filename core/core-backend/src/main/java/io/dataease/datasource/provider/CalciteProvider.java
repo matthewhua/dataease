@@ -911,9 +911,16 @@ public class CalciteProvider extends Provider {
     private void registerDriver() {
         for (String driverClass : getDriver()) {
             try {
-                Driver driver = (Driver) extendedJdbcClassLoader.loadClass(driverClass).newInstance();
+                // Manual class loading test
+                Class<?> driverClassObj = extendedJdbcClassLoader.loadClass(driverClass);
+                LogUtil.info("Successfully loaded driver class: " + driverClass);
+
+                Driver driver = (Driver) driverClassObj.newInstance();
                 DriverManager.registerDriver(new DriverShim(driver));
+            } catch (ClassNotFoundException e) {
+                LogUtil.error("Failed to load driver class: " + driverClass, e);
             } catch (Exception e) {
+                LogUtil.error("Failed to register driver: " + driverClass, e);
                 e.printStackTrace();
             }
         }

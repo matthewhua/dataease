@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.dataease</groupId>
     <artifactId>dataease</artifactId>
-    <version>${dataease.version}</version>
+    <version>2.10.9</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -19,7 +19,7 @@
     </parent>
 
     <properties>
-        <dataease.version>2.10.10</dataease.version>
+        <dataease.version>2.10.9</dataease.version>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud-alibaba.version>2023.0.1.0</spring-cloud-alibaba.version>
@@ -54,6 +54,7 @@
         <mybatis-spring.version>3.0.3</mybatis-spring.version>
         <commons-compress.version>1.26.2</commons-compress.version>
         <jsch.version>0.1.55</jsch.version>
+        <flyway.version>9.22.3</flyway.version>
     </properties>
 
     <dependencyManagement>
@@ -146,7 +147,13 @@
                 <version>${mysql-connector-j.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
         </dependencies>
+
 
     </dependencyManagement>
 
